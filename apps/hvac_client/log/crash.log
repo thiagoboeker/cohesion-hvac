@@ -1,0 +1,221 @@
+2021-06-22 09:55:43 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.HVACClient.Devices.Device:init/1
+    pid: <0.423.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,send_after,[nil,<0.423.0>,publish],[{error_info,#{module => erl_erts_errors}}]},{'Elixir.HVACClient.Devices.Device',schedule,0,[{file,"lib/hvac_client/devices/device.ex"},{line,30}]},{'Elixir.HVACClient.Devices.Device',init,1,[{file,"lib/hvac_client/devices/device.ex"},{line,22}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]
+    ancestors: ['Elixir.HVACClient.DeviceSupervisor','Elixir.HVACClient.Supervisor',<0.415.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.421.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2586
+    stack_size: 29
+    reductions: 23193
+  neighbours:
+2021-06-22 09:55:43 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.HVACClient.Devices.Device:init/1
+    pid: <0.435.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,send_after,[nil,<0.435.0>,publish],[{error_info,#{module => erl_erts_errors}}]},{'Elixir.HVACClient.Devices.Device',schedule,0,[{file,"lib/hvac_client/devices/device.ex"},{line,30}]},{'Elixir.HVACClient.Devices.Device',init,1,[{file,"lib/hvac_client/devices/device.ex"},{line,22}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]
+    ancestors: ['Elixir.HVACClient.DeviceSupervisor','Elixir.HVACClient.Supervisor',<0.415.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.421.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2586
+    stack_size: 29
+    reductions: 22436
+  neighbours:
+2021-06-22 09:55:43 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.HVACClient.Devices.Device:init/1
+    pid: <0.437.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,send_after,[nil,<0.437.0>,publish],[{error_info,#{module => erl_erts_errors}}]},{'Elixir.HVACClient.Devices.Device',schedule,0,[{file,"lib/hvac_client/devices/device.ex"},{line,30}]},{'Elixir.HVACClient.Devices.Device',init,1,[{file,"lib/hvac_client/devices/device.ex"},{line,22}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]
+    ancestors: ['Elixir.HVACClient.DeviceSupervisor','Elixir.HVACClient.Supervisor',<0.415.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.421.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2586
+    stack_size: 29
+    reductions: 22339
+  neighbours:
+2021-06-22 09:55:43 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.HVACClient.Devices.Device:init/1
+    pid: <0.439.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,send_after,[nil,<0.439.0>,publish],[{error_info,#{module => erl_erts_errors}}]},{'Elixir.HVACClient.Devices.Device',schedule,0,[{file,"lib/hvac_client/devices/device.ex"},{line,30}]},{'Elixir.HVACClient.Devices.Device',init,1,[{file,"lib/hvac_client/devices/device.ex"},{line,22}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]
+    ancestors: ['Elixir.HVACClient.DeviceSupervisor','Elixir.HVACClient.Supervisor',<0.415.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.421.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2586
+    stack_size: 29
+    reductions: 22339
+  neighbours:
+2021-06-22 09:55:43 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.HVACClient.Devices.Device:init/1
+    pid: <0.441.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,send_after,[nil,<0.441.0>,publish],[{error_info,#{module => erl_erts_errors}}]},{'Elixir.HVACClient.Devices.Device',schedule,0,[{file,"lib/hvac_client/devices/device.ex"},{line,30}]},{'Elixir.HVACClient.Devices.Device',init,1,[{file,"lib/hvac_client/devices/device.ex"},{line,22}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]
+    ancestors: ['Elixir.HVACClient.DeviceSupervisor','Elixir.HVACClient.Supervisor',<0.415.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.421.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2586
+    stack_size: 29
+    reductions: 22303
+  neighbours:
+2021-06-22 09:55:43 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.414.0>
+    registered_name: []
+    exception exit: {{{badarg,[{erlang,send_after,[nil,<0.441.0>,publish],[{error_info,#{module => erl_erts_errors}}]},{'Elixir.HVACClient.Devices.Device',schedule,0,[{file,"lib/hvac_client/devices/device.ex"},{line,30}]},{'Elixir.HVACClient.Devices.Device',init,1,[{file,"lib/hvac_client/devices/device.ex"},{line,22}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]},{'Elixir.HVACClient.Application',start_phase,[start_devices,normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,142}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: [<0.413.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.415.0>,normal}]
+    links: [<0.413.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 29
+    reductions: 258
+  neighbours:
+2021-06-22 09:57:47 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.HVACClient.Devices.Device:init/1
+    pid: <0.404.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,send_after,[nil,<0.404.0>,publish],[{error_info,#{module => erl_erts_errors}}]},{'Elixir.HVACClient.Devices.Device',schedule,0,[{file,"lib/hvac_client/devices/device.ex"},{line,31}]},{'Elixir.HVACClient.Devices.Device',init,1,[{file,"lib/hvac_client/devices/device.ex"},{line,23}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]
+    ancestors: ['Elixir.HVACClient.DeviceSupervisor','Elixir.HVACClient.Supervisor',<0.396.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.400.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2586
+    stack_size: 29
+    reductions: 23290
+  neighbours:
+2021-06-22 09:57:47 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.HVACClient.Devices.Device:init/1
+    pid: <0.416.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,send_after,[nil,<0.416.0>,publish],[{error_info,#{module => erl_erts_errors}}]},{'Elixir.HVACClient.Devices.Device',schedule,0,[{file,"lib/hvac_client/devices/device.ex"},{line,31}]},{'Elixir.HVACClient.Devices.Device',init,1,[{file,"lib/hvac_client/devices/device.ex"},{line,23}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]
+    ancestors: ['Elixir.HVACClient.DeviceSupervisor','Elixir.HVACClient.Supervisor',<0.396.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.400.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2586
+    stack_size: 29
+    reductions: 22405
+  neighbours:
+2021-06-22 09:57:47 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.HVACClient.Devices.Device:init/1
+    pid: <0.418.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,send_after,[nil,<0.418.0>,publish],[{error_info,#{module => erl_erts_errors}}]},{'Elixir.HVACClient.Devices.Device',schedule,0,[{file,"lib/hvac_client/devices/device.ex"},{line,31}]},{'Elixir.HVACClient.Devices.Device',init,1,[{file,"lib/hvac_client/devices/device.ex"},{line,23}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]
+    ancestors: ['Elixir.HVACClient.DeviceSupervisor','Elixir.HVACClient.Supervisor',<0.396.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.400.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2586
+    stack_size: 29
+    reductions: 22403
+  neighbours:
+2021-06-22 09:57:47 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.HVACClient.Devices.Device:init/1
+    pid: <0.420.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,send_after,[nil,<0.420.0>,publish],[{error_info,#{module => erl_erts_errors}}]},{'Elixir.HVACClient.Devices.Device',schedule,0,[{file,"lib/hvac_client/devices/device.ex"},{line,31}]},{'Elixir.HVACClient.Devices.Device',init,1,[{file,"lib/hvac_client/devices/device.ex"},{line,23}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]
+    ancestors: ['Elixir.HVACClient.DeviceSupervisor','Elixir.HVACClient.Supervisor',<0.396.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.400.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2586
+    stack_size: 29
+    reductions: 22369
+  neighbours:
+2021-06-22 09:57:47 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.HVACClient.Devices.Device:init/1
+    pid: <0.422.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,send_after,[nil,<0.422.0>,publish],[{error_info,#{module => erl_erts_errors}}]},{'Elixir.HVACClient.Devices.Device',schedule,0,[{file,"lib/hvac_client/devices/device.ex"},{line,31}]},{'Elixir.HVACClient.Devices.Device',init,1,[{file,"lib/hvac_client/devices/device.ex"},{line,23}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]
+    ancestors: ['Elixir.HVACClient.DeviceSupervisor','Elixir.HVACClient.Supervisor',<0.396.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.400.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2586
+    stack_size: 29
+    reductions: 22409
+  neighbours:
+2021-06-22 09:57:47 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.395.0>
+    registered_name: []
+    exception exit: {{{badarg,[{erlang,send_after,[nil,<0.422.0>,publish],[{error_info,#{module => erl_erts_errors}}]},{'Elixir.HVACClient.Devices.Device',schedule,0,[{file,"lib/hvac_client/devices/device.ex"},{line,31}]},{'Elixir.HVACClient.Devices.Device',init,1,[{file,"lib/hvac_client/devices/device.ex"},{line,23}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]},{'Elixir.HVACClient.Application',start_phase,[start_devices,normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,142}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: [<0.394.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.396.0>,normal}]
+    links: [<0.394.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 29
+    reductions: 309
+  neighbours:
+2021-06-22 10:01:48 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.395.0>
+    registered_name: []
+    exception exit: {{bad_return_value,{{'Elixir.HVACClient.Application',start_phase,[start_devices,normal,[]]},{ok,<0.422.0>}}},[{application_master,init,4,[{file,"application_master.erl"},{line,142}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: [<0.394.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.396.0>,normal}]
+    links: [<0.394.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 376
+    stack_size: 29
+    reductions: 242
+  neighbours:

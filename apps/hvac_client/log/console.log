@@ -1,0 +1,70 @@
+2021-06-22 09:55:42.994 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-06-22 09:55:43.000 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-06-22 09:55:43.011 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-06-22 09:55:43.012 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-06-22 09:55:43.012 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-06-22 09:55:43.012 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-06-22 09:55:43.083 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-06-22 09:55:43.083 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-06-22 09:55:43.092 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-06-22 09:55:43.098 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-06-22 09:55:43.098 [info] <0.44.0> Application gen_rmq started on node nonode@nohost
+2021-06-22 09:55:43.201 [warning] <0.394.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-06-22 09:55:43.382 [info] <0.44.0> Application hvac_database started on node nonode@nohost
+2021-06-22 09:55:43.382 [info] <0.44.0> Application jason started on node nonode@nohost
+2021-06-22 09:55:43.459 [error] <0.423.0>@Elixir.HVACClient.Devices.Device:schedule:30 CRASH REPORT Process <0.423.0> with 0 neighbours crashed with reason: bad argument in call to erlang:send_after(nil, <0.423.0>, publish) in 'Elixir.HVACClient.Devices.Device':schedule/0 line 30
+2021-06-22 09:55:43.470 [error] <0.435.0>@Elixir.HVACClient.Devices.Device:schedule:30 CRASH REPORT Process <0.435.0> with 0 neighbours crashed with reason: bad argument in call to erlang:send_after(nil, <0.435.0>, publish) in 'Elixir.HVACClient.Devices.Device':schedule/0 line 30
+2021-06-22 09:55:43.479 [error] <0.437.0>@Elixir.HVACClient.Devices.Device:schedule:30 CRASH REPORT Process <0.437.0> with 0 neighbours crashed with reason: bad argument in call to erlang:send_after(nil, <0.437.0>, publish) in 'Elixir.HVACClient.Devices.Device':schedule/0 line 30
+2021-06-22 09:55:43.487 [error] <0.439.0>@Elixir.HVACClient.Devices.Device:schedule:30 CRASH REPORT Process <0.439.0> with 0 neighbours crashed with reason: bad argument in call to erlang:send_after(nil, <0.439.0>, publish) in 'Elixir.HVACClient.Devices.Device':schedule/0 line 30
+2021-06-22 09:55:43.497 [error] <0.441.0>@Elixir.HVACClient.Devices.Device:schedule:30 CRASH REPORT Process <0.441.0> with 0 neighbours crashed with reason: bad argument in call to erlang:send_after(nil, <0.441.0>, publish) in 'Elixir.HVACClient.Devices.Device':schedule/0 line 30
+2021-06-22 09:55:43.497 [error] <0.414.0>@Elixir.HVACClient.Devices.Device:schedule:30 CRASH REPORT Process <0.414.0> with 0 neighbours exited with reason: bad argument in call to erlang:send_after(nil, <0.441.0>, publish) in 'Elixir.HVACClient.Devices.Device':schedule/0 line 30 in application_master:init/4 line 142
+2021-06-22 09:57:47.171 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-06-22 09:57:47.176 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-06-22 09:57:47.182 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-06-22 09:57:47.182 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-06-22 09:57:47.182 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-06-22 09:57:47.182 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-06-22 09:57:47.257 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-06-22 09:57:47.257 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-06-22 09:57:47.269 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-06-22 09:57:47.275 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-06-22 09:57:47.275 [info] <0.44.0> Application gen_rmq started on node nonode@nohost
+2021-06-22 09:57:47.372 [warning] <0.375.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-06-22 09:57:47.642 [info] <0.44.0> Application hvac_database started on node nonode@nohost
+2021-06-22 09:57:47.642 [info] <0.44.0> Application jason started on node nonode@nohost
+2021-06-22 09:57:47.750 [error] <0.404.0>@Elixir.HVACClient.Devices.Device:schedule:31 CRASH REPORT Process <0.404.0> with 0 neighbours crashed with reason: bad argument in call to erlang:send_after(nil, <0.404.0>, publish) in 'Elixir.HVACClient.Devices.Device':schedule/0 line 31
+2021-06-22 09:57:47.761 [error] <0.416.0>@Elixir.HVACClient.Devices.Device:schedule:31 CRASH REPORT Process <0.416.0> with 0 neighbours crashed with reason: bad argument in call to erlang:send_after(nil, <0.416.0>, publish) in 'Elixir.HVACClient.Devices.Device':schedule/0 line 31
+2021-06-22 09:57:47.773 [error] <0.418.0>@Elixir.HVACClient.Devices.Device:schedule:31 CRASH REPORT Process <0.418.0> with 0 neighbours crashed with reason: bad argument in call to erlang:send_after(nil, <0.418.0>, publish) in 'Elixir.HVACClient.Devices.Device':schedule/0 line 31
+2021-06-22 09:57:47.780 [error] <0.420.0>@Elixir.HVACClient.Devices.Device:schedule:31 CRASH REPORT Process <0.420.0> with 0 neighbours crashed with reason: bad argument in call to erlang:send_after(nil, <0.420.0>, publish) in 'Elixir.HVACClient.Devices.Device':schedule/0 line 31
+2021-06-22 09:57:47.791 [error] <0.422.0>@Elixir.HVACClient.Devices.Device:schedule:31 CRASH REPORT Process <0.422.0> with 0 neighbours crashed with reason: bad argument in call to erlang:send_after(nil, <0.422.0>, publish) in 'Elixir.HVACClient.Devices.Device':schedule/0 line 31
+2021-06-22 09:57:47.791 [error] <0.395.0>@Elixir.HVACClient.Devices.Device:schedule:31 CRASH REPORT Process <0.395.0> with 0 neighbours exited with reason: bad argument in call to erlang:send_after(nil, <0.422.0>, publish) in 'Elixir.HVACClient.Devices.Device':schedule/0 line 31 in application_master:init/4 line 142
+2021-06-22 10:01:47.758 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-06-22 10:01:47.763 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-06-22 10:01:47.769 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-06-22 10:01:47.769 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-06-22 10:01:47.769 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-06-22 10:01:47.769 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-06-22 10:01:47.837 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-06-22 10:01:47.837 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-06-22 10:01:47.846 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-06-22 10:01:47.851 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-06-22 10:01:47.851 [info] <0.44.0> Application gen_rmq started on node nonode@nohost
+2021-06-22 10:01:47.933 [warning] <0.375.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-06-22 10:01:48.209 [info] <0.44.0> Application hvac_database started on node nonode@nohost
+2021-06-22 10:01:48.210 [info] <0.44.0> Application jason started on node nonode@nohost
+2021-06-22 10:01:48.311 [error] <0.395.0>@application_master:init:142 CRASH REPORT Process <0.395.0> with 0 neighbours exited with reason: bad return value: {{'Elixir.HVACClient.Application',start_phase,[start_devices,normal,[]]},{ok,<0.422.0>}} in application_master:init/4 line 142
+2021-06-22 10:02:29.471 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-06-22 10:02:29.476 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-06-22 10:02:29.483 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-06-22 10:02:29.483 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-06-22 10:02:29.483 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-06-22 10:02:29.483 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-06-22 10:02:29.552 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-06-22 10:02:29.552 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-06-22 10:02:29.566 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-06-22 10:02:29.572 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-06-22 10:02:29.572 [info] <0.44.0> Application gen_rmq started on node nonode@nohost
+2021-06-22 10:02:29.670 [warning] <0.374.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-06-22 10:02:29.828 [info] <0.44.0> Application hvac_database started on node nonode@nohost
+2021-06-22 10:02:29.828 [info] <0.44.0> Application jason started on node nonode@nohost
+2021-06-22 10:02:29.944 [info] <0.44.0> Application hvac_client started on node nonode@nohost

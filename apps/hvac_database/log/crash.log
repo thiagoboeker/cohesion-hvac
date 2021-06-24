@@ -1,0 +1,1555 @@
+2021-06-21 22:07:53 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.305.0>
+    registered_name: []
+    exception exit: {{bad_return,{{'Elixir.HVACDatabase.Application',start,[normal,[]]},{'EXIT',{{badmatch,{error,channel_not_ready}},[{'Elixir.HVACDatabase.Pubsub.RabbitMQ',setup_queue,2,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,4}]},{'Elixir.HVACDatabase.Application',start,2,[{file,"lib/hvac_database/application.ex"},{line,16}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,293}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,142}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: [<0.304.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.306.0>,normal}]
+    links: [<0.304.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 29
+    reductions: 196
+  neighbours:
+2021-06-22 09:09:07 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.389.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.386.0>,<0.380.0>,<0.377.0>,<0.376.0>,amqp_sup,<0.333.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.386.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:56666 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 383
+  neighbours:
+2021-06-22 09:09:07 =SUPERVISOR REPORT====
+     Supervisor: {<0.386.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.389.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.16>,1,131072,rabbit_framing_amqp_0_9_1,<0.388.0>,{<<"client 127.0.0.1:56666 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:09:07 =SUPERVISOR REPORT====
+     Supervisor: {<0.386.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.389.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.16>,1,131072,rabbit_framing_amqp_0_9_1,<0.388.0>,{<<"client 127.0.0.1:56666 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:09:07 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.388.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.359.0>},70000]}}
+     Offender:   [{pid,<0.359.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:09:07 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.417.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.414.0>,<0.408.0>,<0.406.0>,<0.405.0>,amqp_sup,<0.333.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.414.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:56668 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 381
+  neighbours:
+2021-06-22 09:09:07 =SUPERVISOR REPORT====
+     Supervisor: {<0.414.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.417.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.18>,1,131072,rabbit_framing_amqp_0_9_1,<0.416.0>,{<<"client 127.0.0.1:56668 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:09:07 =SUPERVISOR REPORT====
+     Supervisor: {<0.414.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.417.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.18>,1,131072,rabbit_framing_amqp_0_9_1,<0.416.0>,{<<"client 127.0.0.1:56668 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:09:07 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.416.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.391.0>},70000]}}
+     Offender:   [{pid,<0.391.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:09:07 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.444.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.441.0>,<0.435.0>,<0.433.0>,<0.432.0>,amqp_sup,<0.333.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.441.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:56670 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 381
+  neighbours:
+2021-06-22 09:09:07 =SUPERVISOR REPORT====
+     Supervisor: {<0.441.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.444.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.20>,1,131072,rabbit_framing_amqp_0_9_1,<0.443.0>,{<<"client 127.0.0.1:56670 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:09:07 =SUPERVISOR REPORT====
+     Supervisor: {<0.441.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.444.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.20>,1,131072,rabbit_framing_amqp_0_9_1,<0.443.0>,{<<"client 127.0.0.1:56670 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:09:07 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.443.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.418.0>},70000]}}
+     Offender:   [{pid,<0.418.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:09:07 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.471.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.468.0>,<0.462.0>,<0.460.0>,<0.459.0>,amqp_sup,<0.333.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.468.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:56672 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 381
+  neighbours:
+2021-06-22 09:09:07 =SUPERVISOR REPORT====
+     Supervisor: {<0.468.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.471.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.22>,1,131072,rabbit_framing_amqp_0_9_1,<0.470.0>,{<<"client 127.0.0.1:56672 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:09:07 =SUPERVISOR REPORT====
+     Supervisor: {<0.468.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.471.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.22>,1,131072,rabbit_framing_amqp_0_9_1,<0.470.0>,{<<"client 127.0.0.1:56672 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:09:07 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.470.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.445.0>},70000]}}
+     Offender:   [{pid,<0.445.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:09:07 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.445.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:15:17 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    start_error
+     Reason:     {{badmatch,{error,econnrefused}},[{'Elixir.HVACDatabase.Pubsub.RabbitMQ',setup_queue,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,25}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',init,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,11}]},{'Elixir.GenRMQ.Publisher',init,1,[{file,"lib/publisher.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+     Offender:   [{pid,undefined},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:15:17 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.328.0>
+    registered_name: []
+    exception error: {{badmatch,{error,econnrefused}},[{'Elixir.HVACDatabase.Pubsub.RabbitMQ',setup_queue,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,25}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',init,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,11}]},{'Elixir.GenRMQ.Publisher',init,1,[{file,"lib/publisher.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.312.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.313.0>,{shutdown,{failed_to_start_child,'Elixir.HVACDatabase.Pubsub.RabbitMQ',{{badmatch,{error,econnrefused}},[{'Elixir.HVACDatabase.Pubsub.RabbitMQ',setup_queue,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,25}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',init,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,11}]},{'Elixir.GenRMQ.Publisher',init,1,[{file,"lib/publisher.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}}}}]
+    links: []
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 46237
+  neighbours:
+2021-06-22 09:15:17 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.311.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.HVACDatabase.Pubsub.RabbitMQ',{{badmatch,{error,econnrefused}},[{'Elixir.HVACDatabase.Pubsub.RabbitMQ',setup_queue,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,25}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',init,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,11}]},{'Elixir.GenRMQ.Publisher',init,1,[{file,"lib/publisher.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}}},{'Elixir.HVACDatabase.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,142}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: [<0.310.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.312.0>,normal}]
+    links: [<0.310.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 29
+    reductions: 216
+  neighbours:
+2021-06-22 09:27:59 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.369.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.366.0>,<0.360.0>,<0.357.0>,<0.356.0>,amqp_sup,<0.312.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.366.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:55682 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 383
+  neighbours:
+2021-06-22 09:27:59 =SUPERVISOR REPORT====
+     Supervisor: {<0.366.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.369.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.16>,1,131072,rabbit_framing_amqp_0_9_1,<0.368.0>,{<<"client 127.0.0.1:55682 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:27:59 =SUPERVISOR REPORT====
+     Supervisor: {<0.366.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.369.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.16>,1,131072,rabbit_framing_amqp_0_9_1,<0.368.0>,{<<"client 127.0.0.1:55682 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:27:59 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.368.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.338.0>},70000]}}
+     Offender:   [{pid,<0.338.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:27:59 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.397.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.394.0>,<0.388.0>,<0.386.0>,<0.385.0>,amqp_sup,<0.312.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.394.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:55684 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 381
+  neighbours:
+2021-06-22 09:27:59 =SUPERVISOR REPORT====
+     Supervisor: {<0.394.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.397.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.18>,1,131072,rabbit_framing_amqp_0_9_1,<0.396.0>,{<<"client 127.0.0.1:55684 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:27:59 =SUPERVISOR REPORT====
+     Supervisor: {<0.394.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.397.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.18>,1,131072,rabbit_framing_amqp_0_9_1,<0.396.0>,{<<"client 127.0.0.1:55684 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:27:59 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.396.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.371.0>},70000]}}
+     Offender:   [{pid,<0.371.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:27:59 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.424.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.421.0>,<0.415.0>,<0.413.0>,<0.412.0>,amqp_sup,<0.312.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.421.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:55686 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 381
+  neighbours:
+2021-06-22 09:27:59 =SUPERVISOR REPORT====
+     Supervisor: {<0.421.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.424.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.20>,1,131072,rabbit_framing_amqp_0_9_1,<0.423.0>,{<<"client 127.0.0.1:55686 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:27:59 =SUPERVISOR REPORT====
+     Supervisor: {<0.421.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.424.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.20>,1,131072,rabbit_framing_amqp_0_9_1,<0.423.0>,{<<"client 127.0.0.1:55686 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:27:59 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.423.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.398.0>},70000]}}
+     Offender:   [{pid,<0.398.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:27:59 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.451.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.448.0>,<0.442.0>,<0.440.0>,<0.439.0>,amqp_sup,<0.312.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.448.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:55688 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 381
+  neighbours:
+2021-06-22 09:27:59 =SUPERVISOR REPORT====
+     Supervisor: {<0.448.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.451.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.22>,1,131072,rabbit_framing_amqp_0_9_1,<0.450.0>,{<<"client 127.0.0.1:55688 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:27:59 =SUPERVISOR REPORT====
+     Supervisor: {<0.448.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.451.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.22>,1,131072,rabbit_framing_amqp_0_9_1,<0.450.0>,{<<"client 127.0.0.1:55688 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:27:59 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.450.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.425.0>},70000]}}
+     Offender:   [{pid,<0.425.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:27:59 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.425.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:33:51 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.369.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.366.0>,<0.360.0>,<0.357.0>,<0.356.0>,amqp_sup,<0.312.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.366.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:57529 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 384
+  neighbours:
+2021-06-22 09:33:51 =SUPERVISOR REPORT====
+     Supervisor: {<0.366.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.369.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.16>,1,131072,rabbit_framing_amqp_0_9_1,<0.368.0>,{<<"client 127.0.0.1:57529 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:33:51 =SUPERVISOR REPORT====
+     Supervisor: {<0.366.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.369.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.16>,1,131072,rabbit_framing_amqp_0_9_1,<0.368.0>,{<<"client 127.0.0.1:57529 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:33:51 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.368.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.338.0>},70000]}}
+     Offender:   [{pid,<0.338.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:33:51 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.397.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.394.0>,<0.388.0>,<0.386.0>,<0.385.0>,amqp_sup,<0.312.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.394.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:57531 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 382
+  neighbours:
+2021-06-22 09:33:51 =SUPERVISOR REPORT====
+     Supervisor: {<0.394.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.397.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.18>,1,131072,rabbit_framing_amqp_0_9_1,<0.396.0>,{<<"client 127.0.0.1:57531 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:33:51 =SUPERVISOR REPORT====
+     Supervisor: {<0.394.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.397.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.18>,1,131072,rabbit_framing_amqp_0_9_1,<0.396.0>,{<<"client 127.0.0.1:57531 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:33:51 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.396.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.371.0>},70000]}}
+     Offender:   [{pid,<0.371.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:33:51 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.424.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.421.0>,<0.415.0>,<0.413.0>,<0.412.0>,amqp_sup,<0.312.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.421.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:57533 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 382
+  neighbours:
+2021-06-22 09:33:51 =SUPERVISOR REPORT====
+     Supervisor: {<0.421.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.424.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.20>,1,131072,rabbit_framing_amqp_0_9_1,<0.423.0>,{<<"client 127.0.0.1:57533 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:33:51 =SUPERVISOR REPORT====
+     Supervisor: {<0.421.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.424.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.20>,1,131072,rabbit_framing_amqp_0_9_1,<0.423.0>,{<<"client 127.0.0.1:57533 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:33:51 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.423.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.398.0>},70000]}}
+     Offender:   [{pid,<0.398.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:33:51 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.451.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.448.0>,<0.442.0>,<0.440.0>,<0.439.0>,amqp_sup,<0.312.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.448.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:57535 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 382
+  neighbours:
+2021-06-22 09:33:51 =SUPERVISOR REPORT====
+     Supervisor: {<0.448.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.451.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.22>,1,131072,rabbit_framing_amqp_0_9_1,<0.450.0>,{<<"client 127.0.0.1:57535 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:33:51 =SUPERVISOR REPORT====
+     Supervisor: {<0.448.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.451.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.22>,1,131072,rabbit_framing_amqp_0_9_1,<0.450.0>,{<<"client 127.0.0.1:57535 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:33:51 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.450.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.425.0>},70000]}}
+     Offender:   [{pid,<0.425.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:33:51 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.425.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:35:30 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.369.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.366.0>,<0.360.0>,<0.357.0>,<0.356.0>,amqp_sup,<0.312.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.366.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:51674 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 383
+  neighbours:
+2021-06-22 09:35:30 =SUPERVISOR REPORT====
+     Supervisor: {<0.366.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.369.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.16>,1,131072,rabbit_framing_amqp_0_9_1,<0.368.0>,{<<"client 127.0.0.1:51674 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:35:30 =SUPERVISOR REPORT====
+     Supervisor: {<0.366.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.369.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.16>,1,131072,rabbit_framing_amqp_0_9_1,<0.368.0>,{<<"client 127.0.0.1:51674 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:35:30 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.368.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.338.0>},70000]}}
+     Offender:   [{pid,<0.338.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:35:30 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.397.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.394.0>,<0.388.0>,<0.386.0>,<0.385.0>,amqp_sup,<0.312.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.394.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:51676 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 381
+  neighbours:
+2021-06-22 09:35:30 =SUPERVISOR REPORT====
+     Supervisor: {<0.394.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.397.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.18>,1,131072,rabbit_framing_amqp_0_9_1,<0.396.0>,{<<"client 127.0.0.1:51676 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:35:30 =SUPERVISOR REPORT====
+     Supervisor: {<0.394.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.397.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.18>,1,131072,rabbit_framing_amqp_0_9_1,<0.396.0>,{<<"client 127.0.0.1:51676 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:35:30 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.396.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.371.0>},70000]}}
+     Offender:   [{pid,<0.371.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:35:30 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.424.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.421.0>,<0.415.0>,<0.413.0>,<0.412.0>,amqp_sup,<0.312.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.421.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:51678 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 381
+  neighbours:
+2021-06-22 09:35:30 =SUPERVISOR REPORT====
+     Supervisor: {<0.421.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.424.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.20>,1,131072,rabbit_framing_amqp_0_9_1,<0.423.0>,{<<"client 127.0.0.1:51678 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:35:30 =SUPERVISOR REPORT====
+     Supervisor: {<0.421.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.424.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.20>,1,131072,rabbit_framing_amqp_0_9_1,<0.423.0>,{<<"client 127.0.0.1:51678 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:35:30 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.423.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.398.0>},70000]}}
+     Offender:   [{pid,<0.398.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:35:30 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.451.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.448.0>,<0.442.0>,<0.440.0>,<0.439.0>,amqp_sup,<0.312.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.448.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:51680 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 381
+  neighbours:
+2021-06-22 09:35:30 =SUPERVISOR REPORT====
+     Supervisor: {<0.448.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.451.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.22>,1,131072,rabbit_framing_amqp_0_9_1,<0.450.0>,{<<"client 127.0.0.1:51680 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:35:30 =SUPERVISOR REPORT====
+     Supervisor: {<0.448.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.451.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.22>,1,131072,rabbit_framing_amqp_0_9_1,<0.450.0>,{<<"client 127.0.0.1:51680 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:35:30 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.450.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.425.0>},70000]}}
+     Offender:   [{pid,<0.425.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:35:30 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.425.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:37:08 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    start_error
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'direct' but current is 'topic'">>}},{gen_server,call,[<0.354.0>,{call,{'exchange.declare',0,<<"devices">>,<<"direct">>,false,false,false,false,false,[]},none,<0.338.0>},70000]}}
+     Offender:   [{pid,undefined},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:37:08 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.338.0>
+    registered_name: []
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'direct' but current is 'topic'">>}},{gen_server,call,[<0.354.0>,{call,{'exchange.declare',0,<<"devices">>,<<"direct">>,false,false,false,false,false,[]},none,<0.338.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',setup_queue,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,31}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',init,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,11}]},{'Elixir.GenRMQ.Publisher',init,1,[{file,"lib/publisher.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.322.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.323.0>,{shutdown,{failed_to_start_child,'Elixir.HVACDatabase.Pubsub.RabbitMQ',{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'direct' but current is 'topic'">>}},{gen_server,call,[<0.354.0>,{call,{'exchange.declare',0,<<"devices">>,<<"direct">>,false,false,false,false,false,[]},none,<0.338.0>},70000]}}}}}]
+    links: []
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 47503
+  neighbours:
+2021-06-22 09:37:08 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.321.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.HVACDatabase.Pubsub.RabbitMQ',{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'direct' but current is 'topic'">>}},{gen_server,call,[<0.354.0>,{call,{'exchange.declare',0,<<"devices">>,<<"direct">>,false,false,false,false,false,[]},none,<0.338.0>},70000]}}}},{'Elixir.HVACDatabase.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,142}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: [<0.320.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.322.0>,normal}]
+    links: [<0.320.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 29
+    reductions: 219
+  neighbours:
+2021-06-22 09:37:58 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    start_error
+     Reason:     {{badmatch,{error,econnrefused}},[{'Elixir.HVACDatabase.Pubsub.RabbitMQ',setup_queue,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,25}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',init,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,11}]},{'Elixir.GenRMQ.Publisher',init,1,[{file,"lib/publisher.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+     Offender:   [{pid,undefined},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:37:58 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.323.0>
+    registered_name: []
+    exception error: {{badmatch,{error,econnrefused}},[{'Elixir.HVACDatabase.Pubsub.RabbitMQ',setup_queue,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,25}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',init,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,11}]},{'Elixir.GenRMQ.Publisher',init,1,[{file,"lib/publisher.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.307.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.308.0>,{shutdown,{failed_to_start_child,'Elixir.HVACDatabase.Pubsub.RabbitMQ',{{badmatch,{error,econnrefused}},[{'Elixir.HVACDatabase.Pubsub.RabbitMQ',setup_queue,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,25}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',init,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,11}]},{'Elixir.GenRMQ.Publisher',init,1,[{file,"lib/publisher.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}}}}]
+    links: []
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 46237
+  neighbours:
+2021-06-22 09:37:58 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.306.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.HVACDatabase.Pubsub.RabbitMQ',{{badmatch,{error,econnrefused}},[{'Elixir.HVACDatabase.Pubsub.RabbitMQ',setup_queue,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,25}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',init,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,11}]},{'Elixir.GenRMQ.Publisher',init,1,[{file,"lib/publisher.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}}},{'Elixir.HVACDatabase.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,142}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: [<0.305.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.307.0>,normal}]
+    links: [<0.305.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 29
+    reductions: 212
+  neighbours:
+2021-06-22 09:38:32 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.353.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.350.0>,<0.344.0>,<0.341.0>,<0.340.0>,amqp_sup,<0.297.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.350.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:50790 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 383
+  neighbours:
+2021-06-22 09:38:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.350.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.353.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.16>,1,131072,rabbit_framing_amqp_0_9_1,<0.352.0>,{<<"client 127.0.0.1:50790 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:38:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.350.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.353.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.16>,1,131072,rabbit_framing_amqp_0_9_1,<0.352.0>,{<<"client 127.0.0.1:50790 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:38:32 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.352.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.323.0>},70000]}}
+     Offender:   [{pid,<0.323.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:38:32 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.381.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.378.0>,<0.372.0>,<0.370.0>,<0.369.0>,amqp_sup,<0.297.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.378.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:50792 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 381
+  neighbours:
+2021-06-22 09:38:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.378.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.381.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.18>,1,131072,rabbit_framing_amqp_0_9_1,<0.380.0>,{<<"client 127.0.0.1:50792 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:38:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.378.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.381.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.18>,1,131072,rabbit_framing_amqp_0_9_1,<0.380.0>,{<<"client 127.0.0.1:50792 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:38:32 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.380.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.355.0>},70000]}}
+     Offender:   [{pid,<0.355.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:38:32 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.408.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.405.0>,<0.399.0>,<0.397.0>,<0.396.0>,amqp_sup,<0.297.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.405.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:50794 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 381
+  neighbours:
+2021-06-22 09:38:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.405.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.408.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.20>,1,131072,rabbit_framing_amqp_0_9_1,<0.407.0>,{<<"client 127.0.0.1:50794 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:38:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.405.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.408.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.20>,1,131072,rabbit_framing_amqp_0_9_1,<0.407.0>,{<<"client 127.0.0.1:50794 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:38:32 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.407.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.382.0>},70000]}}
+     Offender:   [{pid,<0.382.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:38:32 =CRASH REPORT====
+  crasher:
+    initial call: rabbit_writer:enter_mainloop/2
+    pid: <0.435.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]
+    ancestors: [<0.432.0>,<0.426.0>,<0.424.0>,<0.423.0>,amqp_sup,<0.297.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.432.0>]
+    dictionary: [{process_name,{rabbit_writer,{<<"client 127.0.0.1:50796 -> 127.0.0.1:5672">>,1}}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 381
+  neighbours:
+2021-06-22 09:38:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.432.0>,amqp_channel_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{erlang,size,[nil],[{error_info,#{module => erl_erts_errors}}]},{rabbit_framing_amqp_0_9_1,shortstr_size,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,178}]},{rabbit_framing_amqp_0_9_1,encode_method_fields,1,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_framing_amqp_0_9_1.erl"},{line,1024}]},{rabbit_binary_generator,build_simple_method_frame,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_binary_generator.erl"},{line,50}]},{rabbit_writer,internal_send_command_async,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,353}]},{rabbit_writer,handle_message,3,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,229}]},{rabbit_writer,mainloop1,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,213}]},{rabbit_writer,mainloop,2,[{file,"c:/Users/thiag/projects/hvac_umbrella/deps/rabbit_common/src/rabbit_writer.erl"},{line,204}]}]}
+     Offender:   [{pid,<0.435.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.22>,1,131072,rabbit_framing_amqp_0_9_1,<0.434.0>,{<<"client 127.0.0.1:50796 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:38:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.432.0>,amqp_channel_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.435.0>},{id,writer},{mfargs,{rabbit_writer,start_link,[#Port<0.22>,1,131072,rabbit_framing_amqp_0_9_1,<0.434.0>,{<<"client 127.0.0.1:50796 -> 127.0.0.1:5672">>,1},false,1000000000]}},{restart_type,transient},{shutdown,30000},{child_type,worker}]
+
+2021-06-22 09:38:32 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {shutdown,{gen_server,call,[<0.434.0>,{call,{'exchange.declare',0,nil,<<"topic">>,false,true,false,false,false,[]},none,<0.409.0>},70000]}}
+     Offender:   [{pid,<0.409.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:38:32 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.409.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:40:28 =ERROR REPORT====
+** Generic server 'Elixir.HVACDatabase.Pubsub.RabbitMQ' terminating 
+** Last message in was {continue,init}
+** When Server state == #{config => [{exchange,<<"devices">>},{connection,<<"amqp://test-user:147248@localhost:5672">>},{queue,<<"readings">>},{prefetch_count,<<"10">>},{concurrency,true},{reconect,true},{queue_options,[{durable,true}]}],module => 'Elixir.HVACDatabase.Pubsub.RabbitMQ'}
+** Reason for termination ==
+** {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.367.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.338.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+2021-06-22 09:40:29 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.338.0>
+    registered_name: 'Elixir.HVACDatabase.Pubsub.RabbitMQ'
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.367.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.338.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.322.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.323.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 6772
+    stack_size: 29
+    reductions: 103696
+  neighbours:
+2021-06-22 09:40:29 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.367.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.338.0>},70000]}}
+     Offender:   [{pid,<0.338.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:40:29 =ERROR REPORT====
+** Generic server 'Elixir.HVACDatabase.Pubsub.RabbitMQ' terminating 
+** Last message in was {continue,init}
+** When Server state == #{config => [{exchange,<<"devices">>},{connection,<<"amqp://test-user:147248@localhost:5672">>},{queue,<<"readings">>},{prefetch_count,<<"10">>},{concurrency,true},{reconect,true},{queue_options,[{durable,true}]}],module => 'Elixir.HVACDatabase.Pubsub.RabbitMQ'}
+** Reason for termination ==
+** {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.395.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.370.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+2021-06-22 09:40:29 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.370.0>
+    registered_name: 'Elixir.HVACDatabase.Pubsub.RabbitMQ'
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.395.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.370.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.322.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.323.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 6772
+    stack_size: 29
+    reductions: 100715
+  neighbours:
+2021-06-22 09:40:29 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.395.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.370.0>},70000]}}
+     Offender:   [{pid,<0.370.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:40:29 =ERROR REPORT====
+** Generic server 'Elixir.HVACDatabase.Pubsub.RabbitMQ' terminating 
+** Last message in was {continue,init}
+** When Server state == #{config => [{exchange,<<"devices">>},{connection,<<"amqp://test-user:147248@localhost:5672">>},{queue,<<"readings">>},{prefetch_count,<<"10">>},{concurrency,true},{reconect,true},{queue_options,[{durable,true}]}],module => 'Elixir.HVACDatabase.Pubsub.RabbitMQ'}
+** Reason for termination ==
+** {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.422.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.397.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+2021-06-22 09:40:29 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.397.0>
+    registered_name: 'Elixir.HVACDatabase.Pubsub.RabbitMQ'
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.422.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.397.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.322.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.323.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 6772
+    stack_size: 29
+    reductions: 100715
+  neighbours:
+2021-06-22 09:40:29 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.422.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.397.0>},70000]}}
+     Offender:   [{pid,<0.397.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:40:29 =ERROR REPORT====
+** Generic server 'Elixir.HVACDatabase.Pubsub.RabbitMQ' terminating 
+** Last message in was {continue,init}
+** When Server state == #{config => [{exchange,<<"devices">>},{connection,<<"amqp://test-user:147248@localhost:5672">>},{queue,<<"readings">>},{prefetch_count,<<"10">>},{concurrency,true},{reconect,true},{queue_options,[{durable,true}]}],module => 'Elixir.HVACDatabase.Pubsub.RabbitMQ'}
+** Reason for termination ==
+** {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.449.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.424.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+2021-06-22 09:40:29 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.424.0>
+    registered_name: 'Elixir.HVACDatabase.Pubsub.RabbitMQ'
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.449.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.424.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.322.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.323.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 6772
+    stack_size: 29
+    reductions: 100715
+  neighbours:
+2021-06-22 09:40:29 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.449.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.424.0>},70000]}}
+     Offender:   [{pid,<0.424.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:40:29 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.424.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:41:46 =ERROR REPORT====
+** Generic server 'Elixir.HVACDatabase.Pubsub.RabbitMQ' terminating 
+** Last message in was {continue,init}
+** When Server state == #{config => [{exchange,<<"devices">>},{connection,<<"amqp://test-user:147248@localhost:5672">>},{queue,<<"readings">>},{prefetch_count,<<"10">>},{concurrency,true},{reconect,true},{queue_options,[{durable,true}]}],module => 'Elixir.HVACDatabase.Pubsub.RabbitMQ'}
+** Reason for termination ==
+** {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.352.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.323.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+2021-06-22 09:41:46 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.323.0>
+    registered_name: 'Elixir.HVACDatabase.Pubsub.RabbitMQ'
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.352.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.323.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.307.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.308.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 29
+    reductions: 103458
+  neighbours:
+2021-06-22 09:41:46 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.352.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.323.0>},70000]}}
+     Offender:   [{pid,<0.323.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:41:46 =ERROR REPORT====
+** Generic server 'Elixir.HVACDatabase.Pubsub.RabbitMQ' terminating 
+** Last message in was {continue,init}
+** When Server state == #{config => [{exchange,<<"devices">>},{connection,<<"amqp://test-user:147248@localhost:5672">>},{queue,<<"readings">>},{prefetch_count,<<"10">>},{concurrency,true},{reconect,true},{queue_options,[{durable,true}]}],module => 'Elixir.HVACDatabase.Pubsub.RabbitMQ'}
+** Reason for termination ==
+** {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.380.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.355.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+2021-06-22 09:41:46 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.355.0>
+    registered_name: 'Elixir.HVACDatabase.Pubsub.RabbitMQ'
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.380.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.355.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.307.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.308.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 6772
+    stack_size: 29
+    reductions: 100715
+  neighbours:
+2021-06-22 09:41:46 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.380.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.355.0>},70000]}}
+     Offender:   [{pid,<0.355.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:41:46 =ERROR REPORT====
+** Generic server 'Elixir.HVACDatabase.Pubsub.RabbitMQ' terminating 
+** Last message in was {continue,init}
+** When Server state == #{config => [{exchange,<<"devices">>},{connection,<<"amqp://test-user:147248@localhost:5672">>},{queue,<<"readings">>},{prefetch_count,<<"10">>},{concurrency,true},{reconect,true},{queue_options,[{durable,true}]}],module => 'Elixir.HVACDatabase.Pubsub.RabbitMQ'}
+** Reason for termination ==
+** {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.407.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.382.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+2021-06-22 09:41:46 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.382.0>
+    registered_name: 'Elixir.HVACDatabase.Pubsub.RabbitMQ'
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.407.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.382.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.307.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.308.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 6772
+    stack_size: 29
+    reductions: 100715
+  neighbours:
+2021-06-22 09:41:46 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.407.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.382.0>},70000]}}
+     Offender:   [{pid,<0.382.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:41:46 =ERROR REPORT====
+** Generic server 'Elixir.HVACDatabase.Pubsub.RabbitMQ' terminating 
+** Last message in was {continue,init}
+** When Server state == #{config => [{exchange,<<"devices">>},{connection,<<"amqp://test-user:147248@localhost:5672">>},{queue,<<"readings">>},{prefetch_count,<<"10">>},{concurrency,true},{reconect,true},{queue_options,[{durable,true}]}],module => 'Elixir.HVACDatabase.Pubsub.RabbitMQ'}
+** Reason for termination ==
+** {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.434.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.409.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+2021-06-22 09:41:46 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.409.0>
+    registered_name: 'Elixir.HVACDatabase.Pubsub.RabbitMQ'
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.434.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.409.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.307.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.308.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 6772
+    stack_size: 29
+    reductions: 100715
+  neighbours:
+2021-06-22 09:41:46 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.434.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.409.0>},70000]}}
+     Offender:   [{pid,<0.409.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:41:46 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.409.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:42:36 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    start_error
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.353.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.338.0>},70000]}}
+     Offender:   [{pid,undefined},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:42:36 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.338.0>
+    registered_name: []
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.353.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.338.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',setup_queue,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,32}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',init,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,11}]},{'Elixir.GenRMQ.Publisher',init,1,[{file,"lib/publisher.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.322.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.323.0>,{shutdown,{failed_to_start_child,'Elixir.HVACDatabase.Pubsub.RabbitMQ',{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.353.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.338.0>},70000]}}}}}]
+    links: []
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 2586
+    stack_size: 29
+    reductions: 47416
+  neighbours:
+2021-06-22 09:42:36 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.321.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.HVACDatabase.Pubsub.RabbitMQ',{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.353.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.338.0>},70000]}}}},{'Elixir.HVACDatabase.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,142}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: [<0.320.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.322.0>,normal}]
+    links: [<0.320.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 29
+    reductions: 219
+  neighbours:
+2021-06-22 09:43:00 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.338.0>
+    registered_name: []
+    exception error: bad argument: [{erlang,atom_to_binary,[[{durable,true}],utf8],[{error_info,#{module => erl_erts_errors}}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,39}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',setup_queue,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,32}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',init,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,11}]},{'Elixir.GenRMQ.Publisher',init,1,[{file,"lib/publisher.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.322.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.323.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 1598
+    stack_size: 29
+    reductions: 47382
+  neighbours:
+2021-06-22 09:43:00 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    start_error
+     Reason:     {badarg,[{erlang,atom_to_binary,[[{durable,true}],utf8],[{error_info,#{module => erl_erts_errors}}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,39}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',setup_queue,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,32}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',init,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,11}]},{'Elixir.GenRMQ.Publisher',init,1,[{file,"lib/publisher.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+     Offender:   [{pid,undefined},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:43:00 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.321.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.HVACDatabase.Pubsub.RabbitMQ',{badarg,[{erlang,atom_to_binary,[[{durable,true}],utf8],[{error_info,#{module => erl_erts_errors}}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,39}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',setup_queue,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,32}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',init,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,11}]},{'Elixir.GenRMQ.Publisher',init,1,[{file,"lib/publisher.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}}},{'Elixir.HVACDatabase.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,142}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: [<0.320.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.322.0>,normal}]
+    links: [<0.320.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 29
+    reductions: 239
+  neighbours:
+2021-06-22 09:43:24 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    start_error
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'durable' for exchange 'devices' in vhost '/': received 'true' but current is 'false'">>}},{gen_server,call,[<0.353.0>,{call,{'exchange.declare',0,<<"devices">>,<<"direct">>,false,true,false,false,false,[]},none,<0.338.0>},70000]}}
+     Offender:   [{pid,undefined},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:43:24 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.338.0>
+    registered_name: []
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'durable' for exchange 'devices' in vhost '/': received 'true' but current is 'false'">>}},{gen_server,call,[<0.353.0>,{call,{'exchange.declare',0,<<"devices">>,<<"direct">>,false,true,false,false,false,[]},none,<0.338.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',setup_queue,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,32}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',init,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,11}]},{'Elixir.GenRMQ.Publisher',init,1,[{file,"lib/publisher.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.322.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.323.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 2586
+    stack_size: 29
+    reductions: 47415
+  neighbours:
+2021-06-22 09:43:24 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.321.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.HVACDatabase.Pubsub.RabbitMQ',{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'durable' for exchange 'devices' in vhost '/': received 'true' but current is 'false'">>}},{gen_server,call,[<0.353.0>,{call,{'exchange.declare',0,<<"devices">>,<<"direct">>,false,true,false,false,false,[]},none,<0.338.0>},70000]}}}},{'Elixir.HVACDatabase.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,142}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: [<0.320.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.320.0>,<0.322.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 29
+    reductions: 216
+  neighbours:
+2021-06-22 09:43:38 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    start_error
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'durable' for exchange 'devices' in vhost '/': received 'true' but current is 'false'">>}},{gen_server,call,[<0.338.0>,{call,{'exchange.declare',0,<<"devices">>,<<"direct">>,false,true,false,false,false,[]},none,<0.323.0>},70000]}}
+     Offender:   [{pid,undefined},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:43:38 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.323.0>
+    registered_name: []
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'durable' for exchange 'devices' in vhost '/': received 'true' but current is 'false'">>}},{gen_server,call,[<0.338.0>,{call,{'exchange.declare',0,<<"devices">>,<<"direct">>,false,true,false,false,false,[]},none,<0.323.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',setup_queue,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,32}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',init,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,11}]},{'Elixir.GenRMQ.Publisher',init,1,[{file,"lib/publisher.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.307.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.308.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 2586
+    stack_size: 29
+    reductions: 47435
+  neighbours:
+2021-06-22 09:43:38 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.306.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.HVACDatabase.Pubsub.RabbitMQ',{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'durable' for exchange 'devices' in vhost '/': received 'true' but current is 'false'">>}},{gen_server,call,[<0.338.0>,{call,{'exchange.declare',0,<<"devices">>,<<"direct">>,false,true,false,false,false,[]},none,<0.323.0>},70000]}}}},{'Elixir.HVACDatabase.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,142}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: [<0.305.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.307.0>,normal}]
+    links: [<0.305.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 376
+    stack_size: 29
+    reductions: 213
+  neighbours:
+2021-06-22 09:44:30 =ERROR REPORT====
+** Generic server 'Elixir.HVACDatabase.Pubsub.RabbitMQ' terminating 
+** Last message in was {continue,init}
+** When Server state == #{config => [{exchange,<<"devices">>},{connection,<<"amqp://test-user:147248@localhost:5672">>},{queue,<<"readings">>},{prefetch_count,<<"10">>},{concurrency,true},{reconect,true},{queue_options,[{durable,true}]}],module => 'Elixir.HVACDatabase.Pubsub.RabbitMQ'}
+** Reason for termination ==
+** {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.352.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.323.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+2021-06-22 09:44:30 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.323.0>
+    registered_name: 'Elixir.HVACDatabase.Pubsub.RabbitMQ'
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.352.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.323.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.307.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.308.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 29
+    reductions: 103454
+  neighbours:
+2021-06-22 09:44:30 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.352.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.323.0>},70000]}}
+     Offender:   [{pid,<0.323.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:44:30 =ERROR REPORT====
+** Generic server 'Elixir.HVACDatabase.Pubsub.RabbitMQ' terminating 
+** Last message in was {continue,init}
+** When Server state == #{config => [{exchange,<<"devices">>},{connection,<<"amqp://test-user:147248@localhost:5672">>},{queue,<<"readings">>},{prefetch_count,<<"10">>},{concurrency,true},{reconect,true},{queue_options,[{durable,true}]}],module => 'Elixir.HVACDatabase.Pubsub.RabbitMQ'}
+** Reason for termination ==
+** {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.380.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.355.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+2021-06-22 09:44:30 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.355.0>
+    registered_name: 'Elixir.HVACDatabase.Pubsub.RabbitMQ'
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.380.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.355.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.307.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.308.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 6772
+    stack_size: 29
+    reductions: 100710
+  neighbours:
+2021-06-22 09:44:30 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.380.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.355.0>},70000]}}
+     Offender:   [{pid,<0.355.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:44:30 =ERROR REPORT====
+** Generic server 'Elixir.HVACDatabase.Pubsub.RabbitMQ' terminating 
+** Last message in was {continue,init}
+** When Server state == #{config => [{exchange,<<"devices">>},{connection,<<"amqp://test-user:147248@localhost:5672">>},{queue,<<"readings">>},{prefetch_count,<<"10">>},{concurrency,true},{reconect,true},{queue_options,[{durable,true}]}],module => 'Elixir.HVACDatabase.Pubsub.RabbitMQ'}
+** Reason for termination ==
+** {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.407.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.382.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+2021-06-22 09:44:30 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.382.0>
+    registered_name: 'Elixir.HVACDatabase.Pubsub.RabbitMQ'
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.407.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.382.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.307.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.308.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 6772
+    stack_size: 29
+    reductions: 100710
+  neighbours:
+2021-06-22 09:44:30 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.407.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.382.0>},70000]}}
+     Offender:   [{pid,<0.382.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:44:30 =ERROR REPORT====
+** Generic server 'Elixir.HVACDatabase.Pubsub.RabbitMQ' terminating 
+** Last message in was {continue,init}
+** When Server state == #{config => [{exchange,<<"devices">>},{connection,<<"amqp://test-user:147248@localhost:5672">>},{queue,<<"readings">>},{prefetch_count,<<"10">>},{concurrency,true},{reconect,true},{queue_options,[{durable,true}]}],module => 'Elixir.HVACDatabase.Pubsub.RabbitMQ'}
+** Reason for termination ==
+** {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.434.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.409.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+2021-06-22 09:44:30 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.409.0>
+    registered_name: 'Elixir.HVACDatabase.Pubsub.RabbitMQ'
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.434.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.409.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.307.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.308.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 6772
+    stack_size: 29
+    reductions: 100710
+  neighbours:
+2021-06-22 09:44:30 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.434.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.409.0>},70000]}}
+     Offender:   [{pid,<0.409.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:44:30 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.409.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:46:51 =ERROR REPORT====
+** Generic server 'Elixir.HVACDatabase.Pubsub.RabbitMQ' terminating 
+** Last message in was {continue,init}
+** When Server state == #{config => [{exchange,<<"devices">>},{connection,<<"amqp://test-user:147248@localhost:5672">>},{queue,<<"readings">>},{prefetch_count,<<"10">>},{concurrency,true},{reconect,true},{queue_options,[{durable,true}]}],module => 'Elixir.HVACDatabase.Pubsub.RabbitMQ'}
+** Reason for termination ==
+** {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.352.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.323.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+2021-06-22 09:46:51 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.323.0>
+    registered_name: 'Elixir.HVACDatabase.Pubsub.RabbitMQ'
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.352.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.323.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.307.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.308.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 29
+    reductions: 103443
+  neighbours:
+2021-06-22 09:46:51 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.352.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.323.0>},70000]}}
+     Offender:   [{pid,<0.323.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:46:51 =ERROR REPORT====
+** Generic server 'Elixir.HVACDatabase.Pubsub.RabbitMQ' terminating 
+** Last message in was {continue,init}
+** When Server state == #{config => [{exchange,<<"devices">>},{connection,<<"amqp://test-user:147248@localhost:5672">>},{queue,<<"readings">>},{prefetch_count,<<"10">>},{concurrency,true},{reconect,true},{queue_options,[{durable,true}]}],module => 'Elixir.HVACDatabase.Pubsub.RabbitMQ'}
+** Reason for termination ==
+** {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.380.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.355.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+2021-06-22 09:46:51 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.355.0>
+    registered_name: 'Elixir.HVACDatabase.Pubsub.RabbitMQ'
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.380.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.355.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.307.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.308.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 6772
+    stack_size: 29
+    reductions: 100655
+  neighbours:
+2021-06-22 09:46:51 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.380.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.355.0>},70000]}}
+     Offender:   [{pid,<0.355.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:46:51 =ERROR REPORT====
+** Generic server 'Elixir.HVACDatabase.Pubsub.RabbitMQ' terminating 
+** Last message in was {continue,init}
+** When Server state == #{config => [{exchange,<<"devices">>},{connection,<<"amqp://test-user:147248@localhost:5672">>},{queue,<<"readings">>},{prefetch_count,<<"10">>},{concurrency,true},{reconect,true},{queue_options,[{durable,true}]}],module => 'Elixir.HVACDatabase.Pubsub.RabbitMQ'}
+** Reason for termination ==
+** {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.407.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.382.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+2021-06-22 09:46:51 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.382.0>
+    registered_name: 'Elixir.HVACDatabase.Pubsub.RabbitMQ'
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.407.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.382.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.307.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.308.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 6772
+    stack_size: 29
+    reductions: 100655
+  neighbours:
+2021-06-22 09:46:51 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.407.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.382.0>},70000]}}
+     Offender:   [{pid,<0.382.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:46:51 =ERROR REPORT====
+** Generic server 'Elixir.HVACDatabase.Pubsub.RabbitMQ' terminating 
+** Last message in was {continue,init}
+** When Server state == #{config => [{exchange,<<"devices">>},{connection,<<"amqp://test-user:147248@localhost:5672">>},{queue,<<"readings">>},{prefetch_count,<<"10">>},{concurrency,true},{reconect,true},{queue_options,[{durable,true}]}],module => 'Elixir.HVACDatabase.Pubsub.RabbitMQ'}
+** Reason for termination ==
+** {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.434.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.409.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+2021-06-22 09:46:51 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.409.0>
+    registered_name: 'Elixir.HVACDatabase.Pubsub.RabbitMQ'
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.434.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.409.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.GenRMQ.Publisher',setup_publisher,1,[{file,"lib/publisher.ex"},{line,336}]},{'Elixir.GenRMQ.Publisher',handle_continue,2,[{file,"lib/publisher.ex"},{line,226}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},{gen_server,loop,7,[{file,"gen_server.erl"},{line,437}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.307.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.308.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 6772
+    stack_size: 29
+    reductions: 100655
+  neighbours:
+2021-06-22 09:46:51 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.434.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.409.0>},70000]}}
+     Offender:   [{pid,<0.409.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:46:51 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.409.0>},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:47:34 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.HVACDatabase.Supervisor'}
+     Context:    start_error
+     Reason:     {{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.353.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.338.0>},70000]}}
+     Offender:   [{pid,undefined},{id,'Elixir.HVACDatabase.Pubsub.RabbitMQ'},{mfargs,{'Elixir.HVACDatabase.Pubsub.RabbitMQ',start_link,[]}},{restart_type,permanent},{significant,false},{shutdown,5000},{child_type,worker}]
+
+2021-06-22 09:47:34 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Publisher:init/1
+    pid: <0.338.0>
+    registered_name: []
+    exception exit: {{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.353.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.338.0>},70000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,247}]},{'Elixir.AMQP.Exchange',declare,4,[{file,"lib/amqp/exchange.ex"},{line,48}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',setup_queue,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,32}]},{'Elixir.HVACDatabase.Pubsub.RabbitMQ',init,0,[{file,"lib/hvac_database/pubsub/rabbit_mq.ex"},{line,11}]},{'Elixir.GenRMQ.Publisher',init,1,[{file,"lib/publisher.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.HVACDatabase.Supervisor',<0.322.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.323.0>,{shutdown,{failed_to_start_child,'Elixir.HVACDatabase.Pubsub.RabbitMQ',{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.353.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.338.0>},70000]}}}}}]
+    links: []
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: true
+    status: running
+    heap_size: 2586
+    stack_size: 29
+    reductions: 47416
+  neighbours:
+2021-06-22 09:47:34 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.321.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.HVACDatabase.Pubsub.RabbitMQ',{{shutdown,{server_initiated_close,406,<<"PRECONDITION_FAILED - inequivalent arg 'type' for exchange 'devices' in vhost '/': received 'topic' but current is 'direct'">>}},{gen_server,call,[<0.353.0>,{call,{'exchange.declare',0,<<"devices">>,<<"topic">>,false,true,false,false,false,[]},none,<0.338.0>},70000]}}}},{'Elixir.HVACDatabase.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,142}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: [<0.320.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.322.0>,normal}]
+    links: [<0.320.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 29
+    reductions: 219
+  neighbours:
